@@ -17,7 +17,7 @@ import UpsertCustomerHomePage from "./UpsertCustomerHomePage";
 export default function HomePage() {
   const [customers, setCustomers] = useState<Customer[]>([]);
   const [openPopup, setOpenPopup] = useState(false);
-  //testing
+
   const onClosePopup = () => {
     setOpenPopup(false);
     fetchCustomers();
