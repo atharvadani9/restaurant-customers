@@ -1,1 +1,1 @@
-Fullstack App which uses GO lang and React
+Fullstack App which uses GO and React
