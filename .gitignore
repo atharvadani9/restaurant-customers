@@ -1,0 +1,4 @@
+frontend/node_modules/.cache
+frontend/node_modules/.cache/default-development
+frontend/node_modules/.cache/.eslintcache
+frontend/node_modules/.cache/tsconfig.tsbuildinfo

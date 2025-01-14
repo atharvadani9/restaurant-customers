@@ -32,6 +32,17 @@ export default function HomePage() {
     }
   };
 
+  const handleDelete = async (customer: Customer) => {
+    try {
+      await axios.delete("http://localhost:8080/delete-customer", {
+        data: customer,
+      });
+      fetchCustomers();
+    } catch (err) {
+      console.error("Error deleting customer:", err);
+    }
+  };
+
   useEffect(() => {
     fetchCustomers();
   }, []);
@@ -70,6 +81,7 @@ export default function HomePage() {
                   <TableCell>ID</TableCell>
                   <TableCell align="right">Customer Name</TableCell>
                   <TableCell align="right">Customer Email</TableCell>
+                  <TableCell align="right">Actions</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -83,6 +95,16 @@ export default function HomePage() {
                     </TableCell>
                     <TableCell align="right">{customer.name}</TableCell>
                     <TableCell align="right">{customer.email}</TableCell>
+                    <TableCell align="right">
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        onClick={() => handleDelete(customer)}
+                      >
+                        Delete
+                      </Button>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
